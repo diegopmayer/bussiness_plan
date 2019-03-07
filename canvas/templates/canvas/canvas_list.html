@@ -1,0 +1,54 @@
+<h1>canvas list</h1>
+<ul class="parceiro">
+{% for parceiro in list_canvas_model %}
+    <li>{{ parceiro.parceiro }}</li>
+{% endfor %}
+</ul>
+
+<ul class="atividade">
+    {% for atividades in list_canvas_model %}
+        <li>{{ atividades.atividade }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="recurso">
+    {% for recurso in list_canvas_model %}
+        <li>{{ recurso.recurso }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="proposta">
+    {% for proposta in list_canvas_model %}
+        <li>{{ proposta.proposta }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="relacionamento">
+    {% for relacionamento in list_canvas_model %}
+        <li>{{ relacionamento.relacionamento }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="canal">
+    {% for canal in list_canvas_model %}
+        <li>{{ canal.canal }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="segmento">
+    {% for segmento in list_canvas_model %}
+        <li>{{ segmento.segmento }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="custo">
+    {% for custo in list_canvas_model %}
+        <li>{{ custo.custo }} </li>
+    {% endfor %}
+</ul>
+
+<ul class="receita">
+    {% for receita in list_canvas_model %}
+        <li>{{ receita.receita }} </li>
+    {% endfor %}
+</ul>

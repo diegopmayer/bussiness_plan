@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import canvas_model
+from .models import CanvasModel
 
-admin.site.register(canvas_model)
+admin.site.register(CanvasModel)
