@@ -1,12 +1,15 @@
 from django import forms
+from django.forms import ModelForm
+from .models import ParceiroModel, AtividadeModel
 
-class CanvasForm(forms.Form):
-    parceiro = forms.CharField()
-    atividade = forms.CharField()
-    recurso = forms.CharField()
-    proposta = forms.CharField()
-    relacionamento = forms.CharField()
-    canal = forms.CharField()
-    segmento = forms.CharField()
-    custo = forms.CharField()
-    receita = forms.CharField()
+
+class ParceiroForm(ModelForm):
+    class Meta:
+        model = ParceiroModel
+        fields = '__all__'
+
+
+class AtividadeForm(ModelForm):
+    class Meta:
+        model = AtividadeModel
+        fields = '__all__'
