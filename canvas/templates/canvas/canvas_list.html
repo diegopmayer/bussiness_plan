@@ -57,5 +57,17 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
+
+        <div class="Principais Relacionamentos">
+            <ul>
+                {% for relacionamentos in relacionamento_list %}
+                    <table>{{ relacionamentos }}</table>
+                {% endfor %}
+            </ul>
+            <form action="{% url 'relacionamento_add' %}" method="POST">{% csrf_token %}
+                {{ relacionamento_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
     </body>
 </html>

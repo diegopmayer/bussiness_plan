@@ -5,6 +5,7 @@ from .views import (
     atividade_add,
     recurso_add,
     proposta_add,
+    relacionamento_add,
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path('atividade-add', atividade_add, name='atividade_add'),
     path('recurso-add', recurso_add, name='recurso_add'),
     path('proposta-add', proposta_add, name='proposta_add'),
+    path('relacionamento-add', relacionamento_add, name='relacionamento_add'),
 ]

@@ -5,6 +5,7 @@ from .models import (
     AtividadeModel,
     RecursoModel,
     PropostaModel,
+    RelacionamentoModel,
 )
 
 
@@ -29,4 +30,10 @@ class RecursoForm(ModelForm):
 class PropostaForm(ModelForm):
     class Meta:
         model = PropostaModel
+        fields = '__all__'
+
+
+class RelacionamentoForm(ModelForm):
+    class Meta:
+        model = RelacionamentoModel
         fields = '__all__'
