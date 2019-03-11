@@ -1,27 +1,61 @@
-<h1>canvas list</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <h1>canvas list</h1>
+        <title> Business Model Canvas </title>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+            <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css">
+    </head>
 
-<div class="Parceiros">
-    <ul>
-    {% for parceiro in parceiro_list %}
-        <li>{{ parceiro.parceiro }}</li>
-    {% endfor %}
-    </ul>
+    <body>        
+        <div class="Parceiros">
+            <ul><h2>Principais Parceiros</h2>
+                {% for parceiro in parceiro_list %}
+                    <table>{{ parceiro.parceiro }}</table>
+                {% endfor %}
+            </ul>
 
-    <form action="{% url 'parceiro_add' %}" method="POST">{% csrf_token %}
-        {{ parceiro_form.as_p }}
-        <button type="submit">Incluir</button>
-    </form>
-</div>
+            <form action="{% url 'parceiro_add' %}" method="POST">{% csrf_token %}
+                {{ parceiro_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
 
-<div class="Atividades">
-    <ul>
-    {% for atividades in atividade_list %}
-        <li>{{ atividades }}</li>
-    {% endfor %}
-    </ul>
+        <div class="Atividades">
+            <ul><h2>Principais Atividades</h2>
+                {% for atividades in atividade_list %}
+                    <table>{{ atividades }}</table>
+                {% endfor %}
+            </ul>
 
-    <form action="{% url 'atividade_add' %}" method="POST">{% csrf_token %}
-        {{ atividade_form.as_p }}
-        <button type="submit">Incluir</button>
-    </form>
-</div>
+            <form action="{% url 'atividade_add' %}" method="POST">{% csrf_token %}
+                {{ atividade_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
+
+        <div class="Recursos">
+            <ul><h2>Principais Recursos</h2>
+                {% for recursos in recurso_list %}
+                    <table>{{ recursos }}</table>  
+                {% endfor %}
+            </ul>
+            <form action="{% url 'recurso_add' %}" method="POST">{% csrf_token %}
+                {{ recurso_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
+        
+        <div>
+            <ul class="Propostas"><h2>Principais Propostas</h2>
+                {% for propostas in proposta_list %}
+                    <table>{{ propostas }}</table>
+                {% endfor %}
+            </ul>
+            <form action="{% url 'proposta_add' %}" method="POST">{% csrf_token %}
+                {{ proposta_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
+    </body>
+</html>
