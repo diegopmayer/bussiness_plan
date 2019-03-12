@@ -87,5 +87,15 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
+        <div class='Custo'>
+            <ul><h2>Principais Custos</h2>
+                {% for custo in custo_list %}
+                    <table>{{ custo }}</table>
+                {% endfor %}
+            </ul>
+            <form action="{% url 'custo_add' %}" method="POST">{% csrf_token %}
+                {{ custo_form.as_p }}
+            </form>
+        </div>
     </body>
 </html>

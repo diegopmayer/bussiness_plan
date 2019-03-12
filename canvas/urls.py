@@ -8,6 +8,7 @@ from .views import (
     rel_add,
     canal_add,
     segmento_add,
+    custo_add,
 )
 
 urlpatterns = [
@@ -19,4 +20,5 @@ urlpatterns = [
     path('rel-add', rel_add, name='rel_add'),
     path('canal-add', canal_add, name='canal_add'),
     path('segmento-add', segmento_add, name='segmento_add'),
+    path('custo-add', custo_add, name='custo_add'),
 ]

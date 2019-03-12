@@ -7,6 +7,7 @@ from .form import (
     RelForm,
     CanalForm,
     SegmentoForm,
+    CustoForm,
 )
 from .models import (
     ParceiroModel,
@@ -16,6 +17,7 @@ from .models import (
     RelModel,
     CanalModel,
     SegmentoModel,
+    CustoModel,
 )
 
 
@@ -34,6 +36,8 @@ def canvas_list(request):
     canal_form = CanalForm()
     segmento_list = SegmentoModel.objects.all()
     segmento_form = SegmentoForm()
+    custo_list = CustoModel.objects.all()
+    custo_form = CustoForm()
     return render(request, 'canvas/canvas_list.html', {
         'parceiro_list': parceiro_list,
         'parceiro_form': parceiro_form,
@@ -49,6 +53,8 @@ def canvas_list(request):
         'canal_form': canal_form,
         'segmento_list': segmento_list,
         'segmento_form': segmento_form,
+        'custo_list': custo_list,
+        'custo_form': custo_form,
         }
     )
 
@@ -97,6 +103,13 @@ def canal_add(request):
 
 def segmento_add(request):
     form = SegmentoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return redirect('canvas_list')
+
+
+def custo_add(request):
+    form  = CustoForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
