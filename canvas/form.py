@@ -5,7 +5,8 @@ from .models import (
     AtividadeModel,
     RecursoModel,
     PropostaModel,
-    RelacionamentoModel,
+    RelModel,
+    CanalModel,
 )
 
 
@@ -33,7 +34,13 @@ class PropostaForm(ModelForm):
         fields = '__all__'
 
 
-class RelacionamentoForm(ModelForm):
+class RelForm(ModelForm):
     class Meta:
-        model = RelacionamentoModel
+        model = RelModel
+        fields = '__all__'
+
+
+class CanalForm(ModelForm):
+    class Meta:
+        model = CanalModel
         fields = '__all__'

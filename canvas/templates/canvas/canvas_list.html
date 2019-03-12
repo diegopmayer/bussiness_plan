@@ -59,13 +59,24 @@
         </div>
 
         <div class="Principais Relacionamentos">
-            <ul>
-                {% for relacionamentos in relacionamento_list %}
+            <ul><h2>Principais Relacionamentos</h2>
+                {% for relacionamentos in rel_list %}
                     <table>{{ relacionamentos }}</table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'relacionamento_add' %}" method="POST">{% csrf_token %}
-                {{ relacionamento_form.as_p }}
+            <form action="{% url 'rel_add' %}" method="POST">{% csrf_token %}
+                {{ rel_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
+        <div class="Canal">
+            <ul><h2>Principais Canais de Relacionamentos</h2>
+                {% for canal in canal_list %}
+                    <table>{{ canal }}</table>
+                {% endfor %}
+            </ul>
+            <form action="{% url 'canal_add' %}" method="POST">{% csrf_token %}
+                {{ canal_form.as_p }}
                 <button type="submit">Incluir</button>
             </form>
         </div>

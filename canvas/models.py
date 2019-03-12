@@ -33,7 +33,7 @@ class PropostaModel(models.Model):
         return self.proposta
 
 
-class RelacionamentoModel(models.Model):
+class RelModel(models.Model):
     relacionamento = models.CharField(max_length=100)
 
 

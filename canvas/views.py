@@ -4,14 +4,16 @@ from .form import (
     AtividadeForm,
     RecursoForm,
     PropostaForm,
-    RelacionamentoForm,
+    RelForm,
+    CanalForm,
 )
 from .models import (
     ParceiroModel,
     AtividadeModel,
     RecursoModel,
     PropostaModel,
-    RelacionamentoModel,
+    RelModel,
+    CanalModel,
 )
 
 
@@ -24,8 +26,10 @@ def canvas_list(request):
     recurso_form = RecursoForm()
     proposta_list = PropostaModel.objects.all()
     proposta_form = PropostaForm()
-    relacionamento_list = RelacionamentoModel.objects.all()
-    relacionamento_form = RelacionamentoForm()
+    rel_list = RelModel.objects.all()
+    rel_form = RelForm()
+    canal_list = CanalModel.objects.all()
+    canal_form = CanalForm()
     return render(request, 'canvas/canvas_list.html', {
         'parceiro_list': parceiro_list,
         'parceiro_form': parceiro_form,
@@ -35,8 +39,10 @@ def canvas_list(request):
         'recurso_form': recurso_form,
         'proposta_list': proposta_list,
         'proposta_form': proposta_form,
-        'relacionamento_list': relacionamento_list,
-        'relacionamento_form': relacionamento_form,
+        'rel_list': rel_list,
+        'rel_form': rel_form,
+        'canal_list': canal_list,
+        'canal_form': canal_form,
         }
     )
 
@@ -69,8 +75,15 @@ def proposta_add(request):
     return redirect('canvas_list')
 
 
-def relacionamento_add(request):
-    form = RelacionamentoForm(request.POST or None)
+def rel_add(request):
+    form = RelForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return redirect('canvas_list')
+
+
+def canal_add(request):
+    form = CanalForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')

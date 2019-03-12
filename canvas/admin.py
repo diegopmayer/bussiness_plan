@@ -4,7 +4,7 @@ from .models import (
     AtividadeModel,
     RecursoModel,
     PropostaModel,
-    RelacionamentoModel,
+    RelModel,
     CanalModel,
     SegmentoModel,
     CustoModel,
@@ -16,7 +16,7 @@ admin.site.register(ParceiroModel)
 admin.site.register(AtividadeModel)
 admin.site.register(RecursoModel)
 admin.site.register(PropostaModel)
-admin.site.register(RelacionamentoModel)
+admin.site.register(RelModel)
 admin.site.register(CanalModel)
 admin.site.register(SegmentoModel)
 admin.site.register(CustoModel)
