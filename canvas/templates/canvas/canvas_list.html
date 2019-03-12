@@ -20,7 +20,6 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
-
         <div class="Atividades">
             <ul><h2>Principais Atividades</h2>
                 {% for atividades in atividade_list %}
@@ -33,7 +32,6 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
-
         <div class="Recursos">
             <ul><h2>Principais Recursos</h2>
                 {% for recursos in recurso_list %}
@@ -45,7 +43,6 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
-        
         <div>
             <ul class="Propostas"><h2>Principais Propostas</h2>
                 {% for propostas in proposta_list %}
@@ -57,7 +54,6 @@
                 <button type="submit">Incluir</button>
             </form>
         </div>
-
         <div class="Principais Relacionamentos">
             <ul><h2>Principais Relacionamentos</h2>
                 {% for relacionamentos in rel_list %}
@@ -77,6 +73,17 @@
             </ul>
             <form action="{% url 'canal_add' %}" method="POST">{% csrf_token %}
                 {{ canal_form.as_p }}
+                <button type="submit">Incluir</button>
+            </form>
+        </div>
+        <div>
+            <ul><h2>Principais Segmentos</h2>
+                {% for seg in segmento_list %}
+                    <table>{{ seg }}</table>
+                {% endfor %}
+            </ul>
+            <form action="{% url 'segmento_add' %}" method="POST">{% csrf_token %}
+                {{ segmento_form.as_p }}
                 <button type="submit">Incluir</button>
             </form>
         </div>

@@ -7,6 +7,7 @@ from .views import (
     proposta_add,
     rel_add,
     canal_add,
+    segmento_add,
 )
 
 urlpatterns = [
@@ -17,4 +18,5 @@ urlpatterns = [
     path('proposta-add', proposta_add, name='proposta_add'),
     path('rel-add', rel_add, name='rel_add'),
     path('canal-add', canal_add, name='canal_add'),
+    path('segmento-add', segmento_add, name='segmento_add'),
 ]

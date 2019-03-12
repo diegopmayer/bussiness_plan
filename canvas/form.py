@@ -7,6 +7,7 @@ from .models import (
     PropostaModel,
     RelModel,
     CanalModel,
+    SegmentoModel,
 )
 
 
@@ -43,4 +44,10 @@ class RelForm(ModelForm):
 class CanalForm(ModelForm):
     class Meta:
         model = CanalModel
+        fields = '__all__'
+
+
+class SegmentoForm(ModelForm):
+    class Meta:
+        model = SegmentoModel
         fields = '__all__'
