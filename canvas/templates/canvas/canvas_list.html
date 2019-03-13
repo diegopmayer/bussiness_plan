@@ -1,26 +1,26 @@
 <h1>canvas list</h1>
 
-<div class="Parceios">
+<div class="Parceiros">
     <ul>
-    {% for parceiro in list_canvas_model %}
+    {% for parceiro in parceiro_list %}
         <li>{{ parceiro.parceiro }}</li>
     {% endfor %}
     </ul>
 
-    <form action="{% url 'canvas_add' %}" method="POST">{% csrf_token %}
-        {{ form.as_p }}
+    <form action="{% url 'parceiro_add' %}" method="POST">{% csrf_token %}
+        {{ parceiro_form.as_p }}
         <button type="submit">Incluir</button>
     </form>
 </div>
 
 <div class="Atividades">
     <ul>
-    {% for atividades in Atividade_list %}
+    {% for atividades in atividade_list %}
         <li>{{ atividades }}</li>
     {% endfor %}
     </ul>
 
-    <form action="{% url 'canvas_add' %}" method="POST">{% csrf_token %}
+    <form action="{% url 'atividade_add' %}" method="POST">{% csrf_token %}
         {{ atividade_form.as_p }}
         <button type="submit">Incluir</button>
     </form>
