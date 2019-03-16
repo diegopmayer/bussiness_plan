@@ -9,6 +9,7 @@ from .models import (
     CanalModel,
     SegmentoModel,
     CustoModel,
+    ReceitaModel,
 )
 
 
@@ -57,4 +58,10 @@ class SegmentoForm(ModelForm):
 class CustoForm(ModelForm):
     class Meta:
         model = CustoModel
+        fields = '__all__'
+
+
+class ReceitaForm(ModelForm):
+    class Meta:
+        model = ReceitaModel
         fields = '__all__'

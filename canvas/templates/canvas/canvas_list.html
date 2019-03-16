@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <br><br>
         <h1>canvas list</h1>
         <title> Business Model Canvas </title>
         <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
@@ -17,7 +18,7 @@
 
             <form action="{% url 'parceiro_add' %}" method="POST">{% csrf_token %}
                 {{ parceiro_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Parceiro</button>
             </form>
         </div>
         <div class="Atividades">
@@ -29,7 +30,7 @@
 
             <form action="{% url 'atividade_add' %}" method="POST">{% csrf_token %}
                 {{ atividade_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Atividade</button>
             </form>
         </div>
         <div class="Recursos">
@@ -40,7 +41,7 @@
             </ul>
             <form action="{% url 'recurso_add' %}" method="POST">{% csrf_token %}
                 {{ recurso_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Recurso</button>
             </form>
         </div>
         <div>
@@ -51,7 +52,7 @@
             </ul>
             <form action="{% url 'proposta_add' %}" method="POST">{% csrf_token %}
                 {{ proposta_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Proposta</button>
             </form>
         </div>
         <div class="Principais Relacionamentos">
@@ -62,7 +63,7 @@
             </ul>
             <form action="{% url 'rel_add' %}" method="POST">{% csrf_token %}
                 {{ rel_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Relacionamento</button>
             </form>
         </div>
         <div class="Canal">
@@ -73,7 +74,7 @@
             </ul>
             <form action="{% url 'canal_add' %}" method="POST">{% csrf_token %}
                 {{ canal_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Canal</button>
             </form>
         </div>
         <div>
@@ -84,7 +85,7 @@
             </ul>
             <form action="{% url 'segmento_add' %}" method="POST">{% csrf_token %}
                 {{ segmento_form.as_p }}
-                <button type="submit">Incluir</button>
+                <button type="submit">Incluir Segmento</button>
             </form>
         </div>
         <div class='Custo'>
@@ -95,7 +96,20 @@
             </ul>
             <form action="{% url 'custo_add' %}" method="POST">{% csrf_token %}
                 {{ custo_form.as_p }}
+                <button type="submit">Incluir Custo</button>
             </form>
         </div>
+        <div class="Receitas">
+            <Ul><h2>Principais Receitas</h2>
+                {% for receita in receita_list %}
+                    <table>{{ receita }}</table>
+                {% endfor %}
+            </Ul>
+            <form action="{% url 'receita_add' %}" method="POST">{% csrf_token %}
+                {{ receita_form.as_p }}
+                <button type="submit">Incluir Receita</button>
+            </form>
+        </div>
+        <br><br><br><br><br>
     </body>
 </html>
