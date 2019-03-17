@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bus_plan',
     'canvas.apps.CanvasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
