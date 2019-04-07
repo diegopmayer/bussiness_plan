@@ -72,6 +72,20 @@ def parceiro_add(request):
     return redirect('canvas_list')
 
 
+def parceiro_update(request, id):
+    update = ParceiroModel.objects.get(id=id)
+    form = ParceiroForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/canvas_update.html', data)
+
 def atividade_add(request):
     form = AtividadeForm(request.POST or None)
     if form.is_valid():

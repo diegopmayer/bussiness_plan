@@ -10,11 +10,13 @@ from .views import (
     segmento_add,
     custo_add,
     receita_add,
+    parceiro_update,
 )
 
 urlpatterns = [
     path('list', canvas_list, name='canvas_list'),
     path('parceiro-add', parceiro_add, name='parceiro_add'),
+    path('parceiro-update/<int:id>/', parceiro_update, name='parceiro_update'),
     path('atividade-add', atividade_add, name='atividade_add'),
     path('recurso-add', recurso_add, name='recurso_add'),
     path('proposta-add', proposta_add, name='proposta_add'),
