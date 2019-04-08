@@ -1,0 +1,7 @@
+<h1>Updating Atividade {{ update }}</h1>
+
+<form action="{% url 'atividade_update' update.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+</form>

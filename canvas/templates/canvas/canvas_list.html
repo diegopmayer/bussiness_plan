@@ -12,11 +12,11 @@
         <div class="Parceiros">
             <ul><h2>Principais Parceiros</h2>
                 {% for parceiro in parceiro_list %}
-                    <li>
+                    <table>
                         <a href="{% url 'parceiro_update' parceiro.id %}">
                             {{ parceiro }}
                         </a>
-                    </li>
+                    </table>
                 {% endfor %}
             </ul>
 
@@ -29,11 +29,16 @@
         <div class="Atividades">
             <ul><h2>Principais Atividades</h2>
                 {% for atividades in atividade_list %}
-                    <table>{{ atividades }}</table>
+                    <table>
+                        <a href="{% url 'atividade_update' atividades.id %}">
+                            {{ atividades }}
+                        </a>
+                    </table>
                 {% endfor %}
             </ul>
 
-            <form action="{% url 'atividade_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'atividade_add' %}" method="POST">
+                {% csrf_token %}
                 {{ atividade_form.as_p }}
                 <button type="submit">Incluir Atividade</button>
             </form>
