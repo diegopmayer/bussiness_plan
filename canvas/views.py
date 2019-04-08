@@ -115,6 +115,21 @@ def recurso_add(request):
     return redirect('canvas_list')
 
 
+def recurso_update(request, id):
+    update = RecursoModel.objects.get(id=id)
+    form = RecursoForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/rec_update.html', data)
+
+
 def proposta_add(request):
     form = PropostaForm(request.POST or None)
     if form.is_valid():

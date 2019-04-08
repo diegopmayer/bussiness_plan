@@ -46,7 +46,11 @@
         <div class="Recursos">
             <ul><h2>Principais Recursos</h2>
                 {% for recursos in recurso_list %}
-                    <table>{{ recursos }}</table>  
+                    <table>
+                        <a href="{% url 'recurso_update' recursos.id %}">
+                            {{ recursos }}
+                        </a>
+                    </table>  
                 {% endfor %}
             </ul>
             <form action="{% url 'recurso_add' %}" method="POST">{% csrf_token %}

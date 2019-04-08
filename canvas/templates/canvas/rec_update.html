@@ -1,0 +1,7 @@
+<h1>Updating Recurso {{ update }}</h1>
+
+<form action="{% url 'recurso_update' update.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+</form>
