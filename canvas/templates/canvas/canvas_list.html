@@ -54,13 +54,16 @@
                 {% endfor %}
             </ul>
             <form action="{% url 'recurso_add' %}" method="POST">{% csrf_token %}
-                {{ recrso_form.as_p }}
+                {{ recurso_form.as_p }}
                 <button type="submit">Incluir Recurso</button>
-            </form>mn,        </div>
+            </form>
+        </div>
         <div>
             <ul class="Propostas"><h2>Principais Propostas</h2>
                 {% for propostas in proposta_list %}
-                    <table>{{ propostas }}</table>
+                    <table>
+                        <a href="{% url 'proposta_update' propostas.id %}">{{ propostas }}</a>
+                    </table>
                 {% endfor %}
             </ul>
             <form action="{% url 'proposta_add' %}" method="POST">{% csrf_token %}
