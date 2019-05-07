@@ -74,7 +74,11 @@
         <div class="Principais Relacionamentos">
             <ul><h2>Principais Relacionamentos</h2>
                 {% for relacionamentos in rel_list %}
-                    <table>{{ relacionamentos }}</table>
+                    <table>
+                        <a href="{% url 'rel_update' relacionamentos.id %}">
+                            {{ relacionamentos }}
+                        </a>
+                    </table>
                 {% endfor %}
             </ul>
             <form action="{% url 'rel_add' %}" method="POST">{% csrf_token %}

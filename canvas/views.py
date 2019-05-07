@@ -167,6 +167,21 @@ def rel_add(request):
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+
+
+def rel_update(request, id):
+    update = RelModel.objects.get(id=id)
+    form = RelForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/rel_update.html', data)
 #_________________________ The end Relacionamento __________________________________
 
 
