@@ -134,8 +134,10 @@ def recurso_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/rec_update.html', data)
+#_________________________ The end Recurso _______________________________________
 
 
+#_________________________ Start Proposta ________________________________________
 def proposta_add(request):
     form = PropostaForm(request.POST or None)
     if form.is_valid():
@@ -156,39 +158,49 @@ def proposta_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/prop_update.html', data)
+#_________________________ The end Proposta ________________________________________
 
 
-
+#_________________________ Start Relacionamento ____________________________________
 def rel_add(request):
     form = RelForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+#_________________________ The end Relacionamento __________________________________
 
 
+#_________________________ Start Canal _____________________________________________
 def canal_add(request):
     form = CanalForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+#_________________________ The end Canal ____________________________________________
 
 
+#_________________________ Start Segmento ___________________________________________
 def segmento_add(request):
     form = SegmentoForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+#_________________________ The end Segmento __________________________________________
 
 
+#_________________________ Start Custo _______________________________________________
 def custo_add(request):
     form  = CustoForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+#_________________________ The end Custo ______________________________________________
 
 
+#_________________________ Start Receita ______________________________________________
 def receita_add(request):
     form = ReceitaForm(request.POST or None)
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+#_________________________ The end Receita ____________________________________________
