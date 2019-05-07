@@ -191,6 +191,21 @@ def canal_add(request):
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+
+
+def canal_update(request, id):
+    update = CanalModel.objects.get(id=id)
+    form = CanalForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/canal_update.html', data)
 #_________________________ The end Canal ____________________________________________
 
 

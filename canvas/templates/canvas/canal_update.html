@@ -1,0 +1,7 @@
+<h1> Updating {{ update }} </h1>
+
+<form action="{% url 'canal_update' update.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"> Salvar alterações </button>
+</form>

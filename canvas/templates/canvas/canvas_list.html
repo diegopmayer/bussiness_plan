@@ -89,7 +89,9 @@
         <div class="Canal">
             <ul><h2>Principais Canais de Relacionamentos</h2>
                 {% for canal in canal_list %}
-                    <table>{{ canal }}</table>
+                    <table>
+                        <a href="{% url 'canal_update' canal.id %}">{{ canal }}</a>
+                    </table>
                 {% endfor %}
             </ul>
             <form action="{% url 'canal_add' %}" method="POST">{% csrf_token %}
