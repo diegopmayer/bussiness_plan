@@ -215,6 +215,21 @@ def segmento_add(request):
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+
+
+def segmento_update(request, id):
+    update = SegmentoModel.objects.get(id=id)
+    form = SegmentoForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/seg_update.html', data)
 #_________________________ The end Segmento __________________________________________
 
 

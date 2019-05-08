@@ -102,7 +102,9 @@
         <div>
             <ul><h2>Principais Segmentos</h2>
                 {% for seg in segmento_list %}
-                    <table>{{ seg }}</table>
+                    <table>
+                        <a href="{% url 'segmento_update' seg.id %}"> {{ seg }}</a>
+                    </table>
                 {% endfor %}
             </ul>
             <form action="{% url 'segmento_add' %}" method="POST">{% csrf_token %}
