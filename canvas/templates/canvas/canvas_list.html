@@ -4,8 +4,10 @@
         <br><br>
         <h1>canvas list</h1>
         <title> Business Model Canvas </title>
-        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
-            <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css">
+        <link rel="stylesheet" type="text/css" 
+            href="/static/admin/css/base.css">
+        <link rel="stylesheet" type="text/css" 
+            href="/static/admin/css/changelists.css">
     </head>
 
     <body>        
@@ -53,7 +55,8 @@
                     </table>  
                 {% endfor %}
             </ul>
-            <form action="{% url 'recurso_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'recurso_add' %}" method="POST">
+                {% csrf_token %}
                 {{ recurso_form.as_p }}
                 <button type="submit">Incluir Recurso</button>
             </form>
@@ -62,11 +65,14 @@
             <ul class="Propostas"><h2>Principais Propostas</h2>
                 {% for propostas in proposta_list %}
                     <table>
-                        <a href="{% url 'proposta_update' propostas.id %}">{{ propostas }}</a>
+                        <a href="{% url 'proposta_update' propostas.id %}">
+                            {{ propostas }}
+                        </a>
                     </table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'proposta_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'proposta_add' %}" method="POST">
+                {% csrf_token %}
                 {{ proposta_form.as_p }}
                 <button type="submit">Incluir Proposta</button>
             </form>
@@ -81,7 +87,8 @@
                     </table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'rel_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'rel_add' %}" method="POST">
+                {% csrf_token %}
                 {{ rel_form.as_p }}
                 <button type="submit">Incluir Relacionamento</button>
             </form>
@@ -90,11 +97,14 @@
             <ul><h2>Principais Canais de Relacionamentos</h2>
                 {% for canal in canal_list %}
                     <table>
-                        <a href="{% url 'canal_update' canal.id %}">{{ canal }}</a>
+                        <a href="{% url 'canal_update' canal.id %}">
+                            {{ canal }}
+                        </a>
                     </table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'canal_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'canal_add' %}" method="POST">
+                {% csrf_token %}
                 {{ canal_form.as_p }}
                 <button type="submit">Incluir Canal</button>
             </form>
@@ -103,11 +113,14 @@
             <ul><h2>Principais Segmentos</h2>
                 {% for seg in segmento_list %}
                     <table>
-                        <a href="{% url 'segmento_update' seg.id %}"> {{ seg }}</a>
+                        <a href="{% url 'segmento_update' seg.id %}"> 
+                            {{ seg }}
+                        </a>
                     </table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'segmento_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'segmento_add' %}" method="POST">
+                {% csrf_token %}
                 {{ segmento_form.as_p }}
                 <button type="submit">Incluir Segmento</button>
             </form>
@@ -121,7 +134,8 @@
                     </table>
                 {% endfor %}
             </ul>
-            <form action="{% url 'custo_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'custo_add' %}" method="POST">
+                {% csrf_token %}
                 {{ custo_form.as_p }}
                 <button type="submit">Incluir Custo</button>
             </form>
@@ -132,7 +146,8 @@
                     <table>{{ receita }}</table>
                 {% endfor %}
             </Ul>
-            <form action="{% url 'receita_add' %}" method="POST">{% csrf_token %}
+            <form action="{% url 'receita_add' %}" method="POST">
+                {% csrf_token %}
                 {{ receita_form.as_p }}
                 <button type="submit">Incluir Receita</button>
             </form>

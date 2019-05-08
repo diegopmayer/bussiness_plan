@@ -65,7 +65,7 @@ def canvas_list(request):
     )
 
 
-#_________________________Start Parceiro_____________________________________
+#_________________________Start Parceiro___________________________
 def parceiro_add(request):
     form = ParceiroForm(request.POST or None)
     if form.is_valid():
@@ -86,10 +86,10 @@ def parceiro_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/parc_update.html', data)
-#_________________________The End Parceiro_____________________________________
+#_________________________The End Parceiro_____________________________
 
 
-#_________________________Start Atividade_____________________________________
+#_________________________Start Atividade______________________________
 def atividade_add(request):
     form = AtividadeForm(request.POST or None)
     if form.is_valid():
@@ -110,10 +110,10 @@ def atividade_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/ativ_update.html', data)
-#_________________________The end Atividade____________________________________
+#_________________________The end Atividade______________________________
 
 
-#_________________________Start Recurso________________________________________
+#_________________________Start Recurso__________________________________
 def recurso_add(request):
     form = RecursoForm(request.POST or None)
     if form.is_valid():
@@ -134,10 +134,10 @@ def recurso_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/rec_update.html', data)
-#_________________________ The end Recurso _______________________________________
+#_________________________ The end Recurso ________________________________
 
 
-#_________________________ Start Proposta ________________________________________
+#_________________________ Start Proposta _________________________________
 def proposta_add(request):
     form = PropostaForm(request.POST or None)
     if form.is_valid():
@@ -158,10 +158,10 @@ def proposta_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/prop_update.html', data)
-#_________________________ The end Proposta ________________________________________
+#_________________________ The end Proposta _______________________________
 
 
-#_________________________ Start Relacionamento ____________________________________
+#_________________________ Start Relacionamento ___________________________
 def rel_add(request):
     form = RelForm(request.POST or None)
     if form.is_valid():
@@ -182,10 +182,10 @@ def rel_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/rel_update.html', data)
-#_________________________ The end Relacionamento __________________________________
+#_________________________ The end Relacionamento _______________________
 
 
-#_________________________ Start Canal _____________________________________________
+#_________________________ Start Canal __________________________________
 def canal_add(request):
     form = CanalForm(request.POST or None)
     if form.is_valid():
