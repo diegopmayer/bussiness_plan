@@ -239,6 +239,21 @@ def custo_add(request):
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+
+
+def custo_update(request, id):
+    update = CustoModel.objects.get(id=id)
+    form = CustoForm(request.POST or None, instance=update)
+    data = {
+        'update': update, 
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/custo_update.html', data)
 #_________________________ The end Custo ______________________________________________
 
 
