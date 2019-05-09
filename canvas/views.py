@@ -152,6 +152,15 @@ def recurso_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/rec_update.html', data)
+
+
+def recurso_delete(request, id):
+    recurso = RecursoModel.objects.get(id=id)
+    if request.method == 'POST':
+        recurso.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': recurso})
 #_________________________ The end Recurso ________________________________
 
 

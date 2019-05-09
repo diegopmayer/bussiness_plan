@@ -21,33 +21,44 @@ from .views import (
     receita_update,
     parceiro_delete,
     atividade_delete,
+    recurso_delete,
 )
 
 urlpatterns = [
     path('list', canvas_list, name='canvas_list'),
+
     path('parceiro-add', parceiro_add, name='parceiro_add'),
     path('parceiro-update/<int:id>/', parceiro_update, 
         name='parceiro_update'),
     path('parceiro-delete/<int:id>/', parceiro_delete, name="parceiro_delete"),
+
     path('atividade-add', atividade_add, name='atividade_add'),
     path('atividade-update/<int:id>/', atividade_update, 
         name='atividade_update'),
     path('atividade-delete/<int:id>/', atividade_delete, name="atividade_delete"),
+
     path('recurso-add', recurso_add, name='recurso_add'),
     path('recurso-update/<int:id>/', recurso_update, 
         name='recurso_update'),
+    path('recurso-delete/<int:id>/', recurso_delete, name='recurso_delete'),
+
     path('proposta-add', proposta_add, name='proposta_add'),
     path('proposta-update/<int:id>/', proposta_update, 
         name='proposta_update'),
+    
     path('rel-add', rel_add, name='rel_add'),
     path('rel-update/<int:id>/', rel_update, name='rel_update'),
+
     path('canal-add', canal_add, name='canal_add'),
     path('canal-update/<int:id>/', canal_update, name='canal_update'),
+
     path('segmento-add', segmento_add, name='segmento_add'),
     path('segmento-update/<int:id>/', segmento_update, 
         name='segmento_update'),
+
     path('custo-add', custo_add, name='custo_add'),
     path('custo-update/<int:id>/', custo_update, name='custo_update'),
+
     path('receita-add', receita_add, name='receita_add'),
     path('receita-update/<int:id>/', receita_update, name='receita_update'),
 ]
