@@ -5,3 +5,7 @@
     {{ form.as_p }}
     <button type="submit">Salvar Alterações</button>
 </form>
+
+<a href="{% url 'atividade_delete' update.id %}">
+    <button type="submit"> Delete </button>
+</a>

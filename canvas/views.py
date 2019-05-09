@@ -119,6 +119,15 @@ def atividade_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/ativ_update.html', data)
+
+
+def atividade_delete(request, id):
+    atividade = AtividadeModel.objects.get(id=id)
+    if request.method == 'POST':
+        atividade.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': atividade})
 #_________________________The end Atividade______________________________
 
 

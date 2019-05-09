@@ -20,6 +20,7 @@ from .views import (
     custo_update,
     receita_update,
     parceiro_delete,
+    atividade_delete,
 )
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     path('atividade-add', atividade_add, name='atividade_add'),
     path('atividade-update/<int:id>/', atividade_update, 
         name='atividade_update'),
+    path('atividade-delete/<int:id>/', atividade_delete, name="atividade_delete"),
     path('recurso-add', recurso_add, name='recurso_add'),
     path('recurso-update/<int:id>/', recurso_update, 
         name='recurso_update'),
