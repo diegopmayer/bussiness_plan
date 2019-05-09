@@ -263,4 +263,18 @@ def receita_add(request):
     if form.is_valid():
         form.save()
     return redirect('canvas_list')
+
+def receita_update(request, id):
+    update = ReceitaModel.objects.get(id=id)
+    form = ReceitaForm(request.POST or None, instance=update)
+    data = {
+        'update': update,
+        'form': form,
+    }
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/receita_update.html', data)
 #_________________________ The end Receita ____________________________________________

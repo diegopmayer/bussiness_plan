@@ -143,7 +143,11 @@
         <div class="Receitas">
             <Ul><h2>Principais Receitas</h2>
                 {% for receita in receita_list %}
-                    <table>{{ receita }}</table>
+                    <table>
+                        <a href="{% url 'receita_update' receita.id %}">
+                            {{ receita }}
+                        </a>
+                    </table>
                 {% endfor %}
             </Ul>
             <form action="{% url 'receita_add' %}" method="POST">
