@@ -86,6 +86,15 @@ def parceiro_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/parc_update.html', data)
+
+
+def parceiro_delete(request, id):
+    parceiro = ParceiroModel.objects.get(id=id)
+    if request.method == 'POST':
+        parceiro.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': parceiro})
 #_________________________The End Parceiro_____________________________
 
 

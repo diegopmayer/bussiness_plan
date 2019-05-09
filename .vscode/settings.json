@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "venv_plan/bin/python"
+    "python.pythonPath": "C:\\Users\\PLANEJAMENTO-01\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
