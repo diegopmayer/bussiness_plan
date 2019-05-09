@@ -22,6 +22,7 @@ from .views import (
     parceiro_delete,
     atividade_delete,
     recurso_delete,
+    proposta_delete,
 )
 
 urlpatterns = [
@@ -45,6 +46,7 @@ urlpatterns = [
     path('proposta-add', proposta_add, name='proposta_add'),
     path('proposta-update/<int:id>/', proposta_update, 
         name='proposta_update'),
+    path('proposta-delete/<int:id>/', proposta_delete, name='proposta_delete'),
     
     path('rel-add', rel_add, name='rel_add'),
     path('rel-update/<int:id>/', rel_update, name='rel_update'),

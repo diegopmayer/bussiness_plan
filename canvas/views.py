@@ -185,6 +185,15 @@ def proposta_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/prop_update.html', data)
+
+
+def proposta_delete(request, id):
+    proposta = PropostaModel.objects.get(id=id)
+    if request.method == 'POST':
+        proposta.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': proposta})
 #_________________________ The end Proposta _______________________________
 
 
