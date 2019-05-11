@@ -251,6 +251,15 @@ def canal_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/canal_update.html', data)
+
+
+def canal_delete(request, id):
+    canal = CanalModel.objects.get(id=id)
+    if request.method == 'POST':
+        canal.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': canal})
 #_________________________ The end Canal ____________________________________________
 
 
