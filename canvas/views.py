@@ -349,4 +349,13 @@ def receita_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/receita_update.html', data)
+
+
+def receita_delete(request, id):
+    receita = ReceitaModel.objects.get(id=id)
+    if request.method == 'POST':
+        receita.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': receita})
 #_________________________ The end Receita ____________________________________________
