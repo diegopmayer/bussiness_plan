@@ -284,6 +284,15 @@ def segmento_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/seg_update.html', data)
+
+
+def segmento_delete(request, id):
+    segmento = SegmentoModel.objects.get(id=id)
+    if request.method == 'POST':
+        segmento.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': segmento})
 #_________________________ The end Segmento __________________________________________
 
 
