@@ -26,6 +26,7 @@ from .views import (
     rel_delete,
     canal_delete,
     segmento_delete,
+    custo_delete,
 )
 
 urlpatterns = [
@@ -66,6 +67,7 @@ urlpatterns = [
 
     path('custo-add', custo_add, name='custo_add'),
     path('custo-update/<int:id>/', custo_update, name='custo_update'),
+    path('custo-delete/<int:id>/', custo_delete, name='custo_delete'),
 
     path('receita-add', receita_add, name='receita_add'),
     path('receita-update/<int:id>/', receita_update, name='receita_update'),

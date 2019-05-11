@@ -317,6 +317,15 @@ def custo_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/custo_update.html', data)
+
+
+def custo_delete(request, id):
+    custo = CustoModel.objects.get(id=id)
+    if request.method == 'POST':
+        custo.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': custo})
 #_________________________ The end Custo ______________________________________________
 
 
