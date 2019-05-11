@@ -218,6 +218,15 @@ def rel_update(request, id):
             return redirect('canvas_list')
     else:
         return render(request, 'canvas/rel_update.html', data)
+
+    
+def rel_delete(request, id):
+    rel = RelModel.objects.get(id=id)
+    if request.method == 'POST':
+        rel.delete()
+        return redirect('canvas_list')
+    else:
+        return render(request, 'canvas/confirm_delete.html', {'obj': rel})
 #_________________________ The end Relacionamento _______________________
 
 

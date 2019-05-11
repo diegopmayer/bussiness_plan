@@ -23,6 +23,7 @@ from .views import (
     atividade_delete,
     recurso_delete,
     proposta_delete,
+    rel_delete,
 )
 
 urlpatterns = [
@@ -50,6 +51,7 @@ urlpatterns = [
     
     path('rel-add', rel_add, name='rel_add'),
     path('rel-update/<int:id>/', rel_update, name='rel_update'),
+    path('rel-delete/<int:id>/', rel_delete, name='rel_delete'),
 
     path('canal-add', canal_add, name='canal_add'),
     path('canal-update/<int:id>/', canal_update, name='canal_update'),
