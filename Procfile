@@ -1,0 +1,1 @@
+web: gununicorn bus_plan.wsgi --log-file -
